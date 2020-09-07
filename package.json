@@ -9,7 +9,9 @@
     "build": "cd client && npm run build && npm run build-storybook",
     "test": "npm run lint && cd client && npm test",
     "prettify": "prettier --write .",
+    "client": "cd client && npm start",
     "lint": "eslint . --ext .js",
+    "server": "nodemon server.js",
     "start": "node server.js"
   },
   "repository": {
@@ -40,6 +42,7 @@
     "eslint-plugin-react-hooks": "^2.5.1",
     "husky": "^4.2.5",
     "lint-staged": "^10.3.0",
+    "nodemon": "^2.0.4",
     "prettier": "^2.1.1"
   },
   "husky": {
