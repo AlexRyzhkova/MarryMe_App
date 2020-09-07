@@ -13,6 +13,7 @@
     "client": "cd client && npm start",
     "lint": "eslint . --ext .js",
     "server": "nodemon server.js",
+    "storybook": "cd client && npm run storybook",
     "start": "node server.js"
   },
   "repository": {
