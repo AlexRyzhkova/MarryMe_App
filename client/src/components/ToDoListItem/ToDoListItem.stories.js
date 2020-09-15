@@ -39,7 +39,7 @@ const toDos = [
 export const Completed = Template.bind({});
 Completed.args = {
   title: "Angebot anfordern",
-  category: "location",
+  category: "Location",
   completed: true,
 };
 export const Uncompleted = Template.bind({});
