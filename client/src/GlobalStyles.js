@@ -52,13 +52,15 @@ const GlobalStyles = () => {
           font-size: 1.3em;
           color: var(--font-color-dark);
         }
+        p {
+          color: var(--font-color-dark);
+          font-family: "Roboto", sans-serif;
+          font-size: 1.1em;
+        }
 
         body {
           margin: 0;
           padding: 0;
-          color: var(--font-color-dark);
-          font-family: "Roboto", sans-serif;
-          font-size: 1.1em;
         }
       `}
     />
