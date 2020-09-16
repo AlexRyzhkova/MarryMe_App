@@ -14,8 +14,6 @@ const GlobalStyles = () => {
           margin: 0;
         }
         :root {
-          height: 100vh;
-          width: 100vw;
           --font-color-dark: #383636;
           --font-color-light: #f5f6fa;
           --base-bg-color: linear-gradient(
@@ -29,32 +27,36 @@ const GlobalStyles = () => {
           --menu-bg-color: #cebebe;
           --header-bg-color: #a79292;
           --bubble-bg-color: #cebebe;
+          --font-lora: "Lora";
+          --font-roboto: "Roboto";
         }
+        html {
+          @font-face {
+            font-family: "Roboto";
+            src: url(${Roboto}) format("truetype");
+          }
 
-        @font-face {
-          font-family: "Roboto";
-          src: url(${Roboto}) format("truetype");
-        }
-
-        @font-face {
-          font-family: "Lora";
-          src: url(${Lora}) format("truetype");
+          @font-face {
+            font-family: "Lora";
+            src: url(${Lora}) format("truetype");
+          }
+          font-family: "Roboto", sans-serif;
+          height: 100vh;
+          width: 100vw;
         }
 
         h1 {
-          font-family: "Lora", serif;
+          font-family: var(--font-lora);
           font-size: 2.2rem;
           color: var(--font-color-dark);
         }
 
         h2 {
-          font-family: "Roboto", sans-serif;
           font-size: 1.3em;
           color: var(--font-color-dark);
         }
         p {
           color: var(--font-color-dark);
-          font-family: "Roboto", sans-serif;
           font-size: 1.1em;
         }
 
