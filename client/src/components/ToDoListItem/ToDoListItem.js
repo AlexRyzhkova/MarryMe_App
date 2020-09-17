@@ -7,9 +7,9 @@ import uncompletedSrc from "../../assets/uncompleted.svg";
 const ToDoListItem = ({ title, category, completed, onCompletedClick }) => {
   return (
     <Button>
-      <button onClick={onCompletedClick}>
-        <Icon src={completed ? completedSrc : uncompletedSrc} alt="Checkmark" />
-      </button>
+      <CompletedButton onClick={onCompletedClick}>
+        <img src={completed ? completedSrc : uncompletedSrc} alt="Checkmark" />
+      </CompletedButton>
       <TitelSpan>{title}</TitelSpan>
       <CategorySpan>{category}</CategorySpan>
     </Button>
@@ -32,9 +32,12 @@ const Button = styled.button`
   column-gap: 10px;
 `;
 
-const Icon = styled.img`
+const CompletedButton = styled.button`
   grid-row: 1/3;
   grid-column: 1/2;
+  outline: none;
+  border: none;
+  background-color: #ffffff;
 `;
 
 const TitelSpan = styled.span`

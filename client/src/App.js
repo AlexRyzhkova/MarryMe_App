@@ -5,7 +5,7 @@ import GlobalStyles from "./GlobalStyles";
 function App() {
   const title = "Angebot anfordern";
   const category = "Location";
-  const [completed, setCompleted] = useState(true);
+  const [completed, setCompleted] = useState(false);
 
   return (
     <div>
