@@ -4,10 +4,12 @@ import PropTypes from "prop-types";
 import completedSrc from "../../assets/completed.svg";
 import uncompletedSrc from "../../assets/uncompleted.svg";
 
-const ToDoListItem = ({ title, category, completed }) => {
+const ToDoListItem = ({ title, category, completed, onCompletedClick }) => {
   return (
     <Button>
-      <Icon src={completed ? completedSrc : uncompletedSrc} alt="Checkmark" />
+      <button onClick={onCompletedClick}>
+        <Icon src={completed ? completedSrc : uncompletedSrc} alt="Checkmark" />
+      </button>
       <TitelSpan>{title}</TitelSpan>
       <CategorySpan>{category}</CategorySpan>
     </Button>
@@ -52,4 +54,5 @@ ToDoListItem.propTypes = {
   title: PropTypes.string,
   category: PropTypes.string,
   completed: PropTypes.bool,
+  onCompletedClick: PropTypes.func,
 };
