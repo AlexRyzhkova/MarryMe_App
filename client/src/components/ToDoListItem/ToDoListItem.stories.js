@@ -45,7 +45,7 @@ Completed.args = {
 export const Uncompleted = Template.bind({});
 Uncompleted.args = {
   title: "Angebot anfordern",
-  category: "location",
+  category: "Location",
   completed: false,
 };
 
