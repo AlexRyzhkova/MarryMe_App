@@ -1,0 +1,28 @@
+{
+  "toDos": [
+    {
+      "id": 1,
+      "title": "Angebot anfordern",
+      "category": "Location",
+      "completed": false
+    },
+    {
+      "id": 2,
+      "title": "Dj anrufen",
+      "category": "Musik",
+      "completed": false
+    },
+    {
+      "id": 3,
+      "title": "Kleid auswählen",
+      "category": "Bekleidung",
+      "completed": false
+    },
+    {
+      "id": 4,
+      "title": "Menü abstimmen",
+      "category": "Location",
+      "completed": false
+    }
+  ]
+}
