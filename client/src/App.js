@@ -1,6 +1,5 @@
 import React from "react";
 import Header from "./components/header/Header";
-import React, { useState } from "react";
 import ToDoListItem from "./components/toDoListItem/ToDoListItem";
 import GlobalStyles from "./GlobalStyles";
 
