@@ -45,6 +45,10 @@ const GlobalStyles = () => {
           width: 100vw;
         }
 
+        button {
+          font-family: --font-roboto;
+          font-size: 1.1em;
+        }
         h1 {
           font-family: var(--font-lora);
           font-size: 2.2rem;

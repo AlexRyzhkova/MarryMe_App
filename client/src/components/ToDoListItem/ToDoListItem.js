@@ -42,11 +42,10 @@ const CompletedButton = styled.button`
 
 const TitelSpan = styled.span`
   align-self: end;
-  padding: 5;
 `;
 
 const CategorySpan = styled.span`
-  font-size: 0.7rem;
+  font-size: 0.9rem;
   color: #383636;
   grid-row: 2/3;
   grid-column: 3/4;
