@@ -42,6 +42,7 @@ const CompletedButton = styled.button`
 
 const TitelSpan = styled.span`
   align-self: end;
+  justify-self: start;
 `;
 
 const CategorySpan = styled.span`

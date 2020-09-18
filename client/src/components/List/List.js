@@ -50,4 +50,8 @@ const ListContainer = styled.div`
   display: flex;
   flex-direction: column;
   margin: 5px;
+
+  button {
+    margin: 5px;
+  }
 `;
