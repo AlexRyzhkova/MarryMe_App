@@ -1,6 +1,6 @@
 import React from "react";
-import Header from "./components/header/Header";
-import ToDoListItem from "./components/toDoListItem/ToDoListItem";
+import Header from "./components/Header/Header";
+import ToDoListItem from "./components/ToDoListItem/ToDoListItem";
 import GlobalStyles from "./GlobalStyles";
 
 function App() {
