@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import ToDoListItem from "./components/toDoListItem/ToDoListItem";
+import ToDoListItem from "./components/ToDoListItem/ToDoListItem";
 import GlobalStyles from "./GlobalStyles";
 
 function App() {
