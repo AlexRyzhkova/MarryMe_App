@@ -13,7 +13,7 @@ const toDos = [
     id: 2,
     title: "Dj anrufen",
     category: "Musik",
-    completed: false,
+    completed: true,
   },
   {
     id: 3,
@@ -53,5 +53,6 @@ const ListContainer = styled.div`
 
   button {
     margin: 5px;
+    max-width: 20rem;
   }
 `;
