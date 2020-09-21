@@ -1,21 +1,17 @@
-import React, { useState } from "react";
-import ToDoListItem from "./components/ToDoListItem/ToDoListItem";
+import React from "react";
 import GlobalStyles from "./GlobalStyles";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
-  const title = "Angebot anfordern";
-  const category = "Location";
-  const [completed, setCompleted] = useState(false);
-
   return (
     <div>
       <GlobalStyles />
-      <ToDoListItem
-        title={title}
-        category={category}
-        completed={completed}
-        onCompletedClick={() => setCompleted(!completed)}
-      />
+      <Router>
+        <Switch>
+          <Route path="/todos">ToDoPage</Route>
+          <Route path="/">Home</Route>
+        </Switch>
+      </Router>
     </div>
   );
 }
