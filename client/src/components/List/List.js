@@ -27,6 +27,30 @@ const toDos = [
     category: "Location",
     completed: false,
   },
+  {
+    id: 5,
+    title: "Kleid auswählen",
+    category: "Bekleidung",
+    completed: false,
+  },
+  {
+    id: 6,
+    title: "Menü abstimmen",
+    category: "Location",
+    completed: false,
+  },
+  {
+    id: 7,
+    title: "Kleid auswählen",
+    category: "Bekleidung",
+    completed: false,
+  },
+  {
+    id: 8,
+    title: "Menü abstimmen",
+    category: "Location",
+    completed: false,
+  },
 ];
 
 const ToDoList = () => {
@@ -50,9 +74,10 @@ const ListContainer = styled.div`
   display: flex;
   flex-direction: column;
   margin: 5px;
+  align-self: center;
 
   button {
     margin: 5px;
-    max-width: 20rem;
+    max-width: 50rem;
   }
 `;
