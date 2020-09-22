@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "../components/Header/Header";
 import ToDoList from "../components/List/List";
 import filterIconSrc from "../assets/filter.svg";
@@ -6,13 +6,18 @@ import addNewIconSrc from "../assets/addNew.svg";
 import styled from "@emotion/styled";
 
 export const ToDoPage = () => {
+  const [completed, setCompleted] = useState(false);
+
   return (
     <Container>
       <Header />
       <Main>
         <h2>To-Do Liste</h2>
         <img src={filterIconSrc} alt="Filter button" />
-        <ToDoList />
+        <ToDoList
+          completed={completed}
+          onCompletedClick={() => setCompleted(!completed)}
+        />
         <img src={addNewIconSrc} alt="Plus button" />
       </Main>
     </Container>
