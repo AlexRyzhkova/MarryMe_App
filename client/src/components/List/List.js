@@ -62,7 +62,6 @@ const ToDoList = () => {
           title={toDo.title}
           category={toDo.category}
           completed={toDo.completed}
-          onCompletedClick={toDo.onCompletedClick}
         />
       ))}
     </ListContainer>
