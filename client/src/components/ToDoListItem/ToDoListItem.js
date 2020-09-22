@@ -19,13 +19,13 @@ export default ToDoListItem;
 
 //Styling
 const Button = styled.button`
-  border-radius: 20px;
+  border-radius: 30px;
   background-color: #ffffff;
   color: #141313;
   padding: 15px 6px 6px 6px;
   display: grid;
   grid-template-rows: auto auto;
-  grid-template-columns: auto 1fr auto;
+  grid-template-columns: 10% 1fr auto;
   outline: none;
   box-shadow: 2px 2px 6px 0px lightgrey;
   border-color: #707070;
@@ -37,7 +37,8 @@ const CompletedButton = styled.button`
   grid-column: 1/2;
   outline: none;
   border: none;
-  background-color: #ffffff;
+  /* background-color: #ffffff; */
+  align-self: center;
 `;
 
 const TitelSpan = styled.span`
@@ -47,7 +48,7 @@ const TitelSpan = styled.span`
 
 const CategorySpan = styled.span`
   font-size: 0.9rem;
-  color: #383636;
+  padding-right: 10px;
   grid-row: 2/3;
   grid-column: 3/4;
 `;

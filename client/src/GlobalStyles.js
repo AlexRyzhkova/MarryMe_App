@@ -17,12 +17,9 @@ const GlobalStyles = () => {
           --font-color-dark: #383636;
           --font-color-light: #f5f6fa;
           --base-bg-color: linear-gradient(
-            to top,
-            #d5d4d0 0%,
-            #d5d4d0 1%,
-            #eeeeec 31%,
-            #efeeec 75%,
-            #e9e9e7 100%
+            180deg,
+            rgba(248, 248, 248, 1) 45%,
+            rgba(211, 211, 211, 1) 100%
           );
           --menu-bg-color: #cebebe;
           --header-bg-color: #a79292;
@@ -43,11 +40,13 @@ const GlobalStyles = () => {
           font-family: "Roboto", sans-serif;
           height: 100vh;
           width: 100vw;
+          background-image: var(--base-bg-color);
         }
 
         button {
           font-family: --font-roboto;
           font-size: 1.1em;
+          background-color: white;
         }
         h1 {
           font-family: var(--font-lora);

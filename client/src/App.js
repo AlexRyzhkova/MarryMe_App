@@ -1,6 +1,7 @@
 import React from "react";
 import GlobalStyles from "./GlobalStyles";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { ToDoPage } from "./pages/ToDoPage";
 
 function App() {
   return (
@@ -8,7 +9,9 @@ function App() {
       <GlobalStyles />
       <Router>
         <Switch>
-          <Route path="/todos">ToDoPage</Route>
+          <Route path="/todos">
+            <ToDoPage />
+          </Route>
           <Route path="/">Home</Route>
         </Switch>
       </Router>
