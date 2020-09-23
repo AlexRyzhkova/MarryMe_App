@@ -10,7 +10,7 @@ function App() {
       <GlobalStyles />
       <Router>
         <Switch>
-          <Route path="/todos/createToDo">
+          <Route path="/todos/createtodo">
             <CreateToDo />
           </Route>
           <Route path="/todos">
