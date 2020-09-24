@@ -11,6 +11,7 @@ const List = ({ items = [] }) => {
           key={item.id}
           title={item.title}
           category={item.category}
+          infos={item.infos}
           completed={item.completed}
         />
       ))}
