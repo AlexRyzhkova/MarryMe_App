@@ -1,21 +1,15 @@
-import React, { useState } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import styled from "@emotion/styled";
 
 const Input = ({ topic, type, value, onChange, placeholder }) => {
-  const [title, setTitle] = useState("");
-
-  function handleTitleChange(event) {
-    setTitle(event.target.value);
-  }
-
   return (
     <InputContainer>
       <p>{topic}</p>
       <input
         type="text"
-        value={title}
-        onChange={handleTitleChange}
+        value={value}
+        onChange={onChange}
         placeholder={placeholder}
       />
     </InputContainer>
