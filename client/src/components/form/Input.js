@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 import styled from "@emotion/styled";
 
-const Input = ({ type, value, onChange, placeholder }) => {
+const Input = ({ topic, type, value, onChange, placeholder }) => {
   const [title, setTitle] = useState("");
 
   function handleTitleChange(event) {
@@ -11,12 +11,12 @@ const Input = ({ type, value, onChange, placeholder }) => {
 
   return (
     <InputContainer>
-      <p>Titel</p>
+      <p>{topic}</p>
       <input
         type="text"
         value={title}
         onChange={handleTitleChange}
-        placeholder="neues ToDo"
+        placeholder={placeholder}
       />
     </InputContainer>
   );
@@ -44,4 +44,5 @@ Input.propTypes = {
   value: PropTypes.string,
   onChange: PropTypes.func,
   placeholder: PropTypes.string,
+  topic: PropTypes.string,
 };

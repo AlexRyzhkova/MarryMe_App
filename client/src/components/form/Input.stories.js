@@ -7,5 +7,14 @@ export default {
 };
 
 export const TitleInput = () => (
-  <Input type="text" value="Titel" placeholder="neues ToDo" />
+  <Input topic="Titel " type="text" value="Titel" placeholder="neues ToDo" />
+);
+
+export const InfosInput = () => (
+  <Input
+    topic="Beschreibung"
+    type="text"
+    value="Titel"
+    placeholder="ToDo Beschreibung"
+  />
 );
