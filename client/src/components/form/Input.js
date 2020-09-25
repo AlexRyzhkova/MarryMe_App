@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-// import styled from "@emotion/styled";
+import styled from "@emotion/styled";
 // import PropTypes from "prop-types";
 
 const Input = ({ type, value, onChange, placeholder }) => {
@@ -11,18 +11,34 @@ const Input = ({ type, value, onChange, placeholder }) => {
   }
 
   return (
-    <label>
-      Titel
+    <InputContainer>
+      <p>Titel</p>
       <input
         type="text"
         value={title}
         onChange={handleTitleChange}
         placeholder="neues ToDo"
       />
-    </label>
+    </InputContainer>
   );
 };
 export default Input;
+
+const InputContainer = styled.label`
+  display: flex;
+  flex-direction: row;
+
+  p {
+    margin: 0px;
+    padding-right: 2.5em;
+  }
+
+  input {
+    outline: none;
+    border: none;
+    width: 18em;
+  }
+`;
 
 Input.propTypes = {
   type: PropTypes.string,
