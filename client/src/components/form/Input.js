@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import styled from "@emotion/styled";
-// import PropTypes from "prop-types";
 
 const Input = ({ type, value, onChange, placeholder }) => {
   const [title, setTitle] = useState("");
