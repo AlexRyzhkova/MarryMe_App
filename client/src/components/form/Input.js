@@ -18,18 +18,24 @@ const Input = ({ topic, type, value, onChange, placeholder }) => {
 export default Input;
 
 const InputContainer = styled.label`
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: 1fr 60%;
+  width: 100%;
+  height: auto;
+  margin-bottom: 2em;
+  grid-column-gap: 2.5em;
 
   p {
     margin: 0px;
-    padding-right: 2.5em;
+    grid-column: 1/2;
+    justify-self: end;
   }
 
   input {
     outline: none;
     border: none;
-    width: 18em;
+    font-size: 0.9em;
+    grid-column: 2/3;
   }
 `;
 
