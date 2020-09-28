@@ -4,14 +4,22 @@ import styled from "@emotion/styled";
 import Input from "./Input";
 import Button from "./Button";
 import DropDown from "./DropDown";
+import { postTodo } from "../../api/postToDo";
 
-const Form = ({ topic, placeholder }) => {
+const Form = ({ topic, placeholder, category }) => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
 
+  async function handleSubmit(event) {
+    event.preventDefault();
+    const toDo = { title, category, description };
+
+    await postTodo(toDo);
+  }
   return (
     <FormContainer>
       <Input
+        onSubmit={handleSubmit}
         value={title}
         topic="Titel"
         placeholder="neues ToDo"
@@ -37,7 +45,7 @@ export default Form;
 
 //styling
 
-const FormContainer = styled.div`
+const FormContainer = styled.form`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -55,4 +63,5 @@ const FormContainer = styled.div`
 Form.propTypes = {
   placeholder: PropTypes.string,
   topic: PropTypes.string,
+  category: PropTypes.string,
 };
