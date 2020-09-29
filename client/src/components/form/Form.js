@@ -49,6 +49,9 @@ export default Form;
 const StyledForm = styled.form`
   display: flex;
   flex-direction: column;
+  background-color: #cebebe;
+  z-index: 2;
+  width: 100%;
 
   button:first-of-type {
     align-self: flex-end;
@@ -56,7 +59,7 @@ const StyledForm = styled.form`
     padding-right: 2em;
   }
   button:last-of-type {
-    margin-top: 5em;
+    margin: 3em 0px;
     align-self: center;
   }
 

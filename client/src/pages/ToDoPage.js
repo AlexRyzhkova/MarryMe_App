@@ -5,9 +5,11 @@ import filterIconSrc from "../assets/filter.svg";
 import addNewIconSrc from "../assets/addNew.svg";
 import styled from "@emotion/styled";
 import { getTodos } from "../api/fetchToDos";
+import CreateToDo from "./CreateToDo";
 
 export const ToDoPage = () => {
   const [toDos, setTodos] = useState(null);
+  const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
     const doGetToDos = async () => {
@@ -21,10 +23,16 @@ export const ToDoPage = () => {
     <Container>
       <Header />
       <Main>
+        {showModal && <CreateToDo />}
         <h2>To-Do Liste</h2>
         <img src={filterIconSrc} alt="Filter button" />
         <List items={toDos} />
-        <img src={addNewIconSrc} alt="Plus button" />
+        {showModal && (
+          <CloseButton onClick={() => setShowModal(false)}>close</CloseButton>
+        )}
+        <OpenButton onClick={() => setShowModal(true)}>
+          <img src={addNewIconSrc} alt="Plus button" />
+        </OpenButton>
       </Main>
     </Container>
   );
@@ -57,4 +65,19 @@ const Main = styled.div`
     align-self: flex-end;
     padding: 0 20px 10px 0;
   }
+`;
+
+const CloseButton = styled.button`
+  z-index: 3;
+  background-color: hotpink;
+  position: absolute;
+  top: 20%;
+  left: 20%;
+`;
+
+const OpenButton = styled.button`
+  align-self: flex-end;
+  background-color: transparent;
+  border: none;
+  outline: none;
 `;
