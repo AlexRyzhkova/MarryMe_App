@@ -18,9 +18,8 @@ const Form = ({ topic, placeholder, category }) => {
     await postTodo(toDo);
   }
   return (
-    <FormContainer>
+    <StyledForm onSubmit={handleSubmit}>
       <Input
-        onSubmit={handleSubmit}
         value={title}
         topic="Titel"
         placeholder="neues ToDo"
@@ -36,10 +35,10 @@ const Form = ({ topic, placeholder, category }) => {
           setDescription(event.target.value);
         }}
       />
-      <DropDown />
+      <DropDown category />
       <DeleteButton />
-      <Button />
-    </FormContainer>
+      <Button type="submit" />
+    </StyledForm>
   );
 };
 
@@ -47,12 +46,9 @@ export default Form;
 
 //styling
 
-const FormContainer = styled.form`
+const StyledForm = styled.form`
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
-  /* justify-content: space-around; */
-  /* margin: 2em; */
 
   button:first-of-type {
     align-self: flex-end;
