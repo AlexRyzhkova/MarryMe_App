@@ -6,6 +6,5 @@ export const getTodos = async () => {
   }
 
   const fetchedTodos = await response.json();
-  console.log(fetchedTodos);
   return fetchedTodos;
 };

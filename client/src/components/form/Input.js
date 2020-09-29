@@ -4,7 +4,7 @@ import styled from "@emotion/styled";
 
 const Input = ({ topic, type, value, onChange, placeholder }) => {
   return (
-    <InputContainer>
+    <StyledInput>
       <p>{topic}</p>
       <input
         type="text"
@@ -12,12 +12,12 @@ const Input = ({ topic, type, value, onChange, placeholder }) => {
         onChange={onChange}
         placeholder={placeholder}
       />
-    </InputContainer>
+    </StyledInput>
   );
 };
 export default Input;
 
-const InputContainer = styled.label`
+const StyledInput = styled.label`
   display: grid;
   grid-template-columns: 1fr 60%;
   width: 100%;

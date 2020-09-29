@@ -5,6 +5,7 @@ import Input from "./Input";
 import Button from "./Button";
 import DropDown from "./DropDown";
 import { postTodo } from "../../api/postToDo";
+import DeleteButton from "../DeleteButton";
 
 const Form = ({ topic, placeholder, category }) => {
   const [title, setTitle] = useState("");
@@ -36,6 +37,7 @@ const Form = ({ topic, placeholder, category }) => {
         }}
       />
       <DropDown />
+      <DeleteButton />
       <Button />
     </FormContainer>
   );
@@ -48,13 +50,20 @@ export default Form;
 const FormContainer = styled.form`
   display: flex;
   flex-direction: column;
-  align-items: center;
+  /* align-items: center; */
   /* justify-content: space-around; */
   /* margin: 2em; */
 
-  button {
-    margin-top: 5em;
+  button:first-of-type {
+    align-self: flex-end;
+    margin-top: 3em;
+    padding-right: 2em;
   }
+  button:last-of-type {
+    margin-top: 5em;
+    align-self: center;
+  }
+
   div:nth-child(3) {
     align-self: flex-end;
   }

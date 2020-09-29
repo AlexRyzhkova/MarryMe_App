@@ -4,15 +4,15 @@ import styled from "@emotion/styled";
 
 const DeleteButton = () => {
   return (
-    <ButtonContainer>
+    <StyledButton>
       <img src={deleteIconSrc} alt="Dustbin" />
-      <p>To-Do löschen</p>
-    </ButtonContainer>
+      <p>ToDo löschen</p>
+    </StyledButton>
   );
 };
 export default DeleteButton;
 
-const ButtonContainer = styled.button`
+const StyledButton = styled.button`
   display: flex;
   flex-direction: row;
   outline: none;
@@ -22,6 +22,7 @@ const ButtonContainer = styled.button`
   margin: 0px;
   padding: 0px;
   background-color: Transparent;
+  font-size: 0.9em;
   p {
     margin: 0px;
     padding-left: 0.4em;
