@@ -1,74 +1,25 @@
 import React from "react";
 import ToDoListItem from "../ToDoListItem/ToDoListItem";
 import styled from "@emotion/styled";
+import PropTypes from "prop-types";
 
-const toDos = [
-  {
-    id: 1,
-    title: "Angebot anfordern",
-    category: "Location",
-    completed: false,
-  },
-  {
-    id: 2,
-    title: "Dj anrufen",
-    category: "Musik",
-    completed: true,
-  },
-  {
-    id: 3,
-    title: "Kleid auswählen",
-    category: "Bekleidung",
-    completed: false,
-  },
-  {
-    id: 4,
-    title: "Menü abstimmen",
-    category: "Location",
-    completed: false,
-  },
-  {
-    id: 5,
-    title: "Kleid auswählen",
-    category: "Bekleidung",
-    completed: false,
-  },
-  {
-    id: 6,
-    title: "Menü abstimmen",
-    category: "Location",
-    completed: false,
-  },
-  {
-    id: 7,
-    title: "Kleid auswählen",
-    category: "Bekleidung",
-    completed: false,
-  },
-  {
-    id: 8,
-    title: "Menü abstimmen",
-    category: "Location",
-    completed: false,
-  },
-];
-
-const ToDoList = () => {
+const List = ({ items = [] }) => {
   return (
     <ListContainer>
-      {toDos.map((toDo) => (
+      {items?.map((item) => (
         <ToDoListItem
-          key={toDo.id}
-          title={toDo.title}
-          category={toDo.category}
-          completed={toDo.completed}
+          key={item.id}
+          title={item.title}
+          category={item.category}
+          infos={item.infos}
+          completed={item.completed}
         />
       ))}
     </ListContainer>
   );
 };
 
-export default ToDoList;
+export default List;
 
 const ListContainer = styled.div`
   display: flex;
@@ -81,3 +32,7 @@ const ListContainer = styled.div`
     max-width: 50rem;
   }
 `;
+
+List.propTypes = {
+  items: PropTypes.array,
+};

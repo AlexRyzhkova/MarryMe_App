@@ -6,18 +6,14 @@ export default {
   component: ToDoListItem,
 };
 
-const Template = (args) => <ToDoListItem {...args} />;
+export const Completed = () => (
+  <ToDoListItem title="Angebot anfordern" category="Location" completed />
+);
 
-export const Completed = Template.bind({});
-Completed.args = {
-  title: "Angebot anfordern",
-  category: "Location",
-  completed: true,
-};
-
-export const Uncompleted = Template.bind({});
-Uncompleted.args = {
-  title: "Angebot anfordern",
-  category: "Location",
-  completed: false,
-};
+export const Uncompleted = () => (
+  <ToDoListItem
+    title="Angebot anfordern"
+    category="Location"
+    completed={false}
+  />
+);

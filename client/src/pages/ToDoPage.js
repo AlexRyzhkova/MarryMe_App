@@ -1,18 +1,29 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Header from "../components/Header/Header";
-import ToDoList from "../components/List/List";
+import List from "../components/List/List";
 import filterIconSrc from "../assets/filter.svg";
 import addNewIconSrc from "../assets/addNew.svg";
 import styled from "@emotion/styled";
+import { getTodos } from "../api/fetchToDos";
 
 export const ToDoPage = () => {
+  const [toDos, setTodos] = useState(null);
+
+  useEffect(() => {
+    const doGetToDos = async () => {
+      const newToDos = await getTodos();
+      setTodos(newToDos);
+    };
+    doGetToDos();
+  }, []);
+
   return (
     <Container>
       <Header />
       <Main>
         <h2>To-Do Liste</h2>
         <img src={filterIconSrc} alt="Filter button" />
-        <ToDoList />
+        <List items={toDos} />
         <img src={addNewIconSrc} alt="Plus button" />
       </Main>
     </Container>
