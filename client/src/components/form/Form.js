@@ -8,17 +8,26 @@ import { postTodo } from "../../api/postToDo";
 import DeleteButton from "../DeleteButton";
 import { deleteTodo } from "../../api/deleteToDo";
 
-const Form = ({ topic, placeholder, toDoId, toDo }) => {
+const Form = ({
+  topic,
+  placeholder,
+  toDoId,
+  toDo,
+  onSetShowModal,
+  onRefetch,
+}) => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [category, setCategory] = useState("");
-  const [loading, setLoading] = useState(false);
+  // const [loading, setLoading] = useState(false);
 
   async function handleSubmit(event) {
     event.preventDefault();
     const toDo = { title, category, description };
-    setLoading(true);
+    // setLoading(true);
     await postTodo(toDo);
+    onSetShowModal(false);
+    await onRefetch();
   }
 
   function handleCategoryChange(category) {
@@ -33,7 +42,6 @@ const Form = ({ topic, placeholder, toDoId, toDo }) => {
   return (
     <StyledForm onSubmit={handleSubmit}>
       <Input
-        required="required"
         value={title}
         topic="Titel"
         placeholder={toDo ? toDo.title : "neues ToDo"}
@@ -54,7 +62,7 @@ const Form = ({ topic, placeholder, toDoId, toDo }) => {
         handleCategoryChange={handleCategoryChange}
       />
       <DeleteButton type="button" onClick={handleDeleteToDo} />
-      <Button type="submit" disabled={!title || loading} />
+      <Button />
     </StyledForm>
   );
 };
@@ -92,4 +100,6 @@ Form.propTypes = {
   toDoId: PropTypes.any,
   toDo: PropTypes.any,
   handleDeleteToDo: PropTypes.func,
+  onSetShowModal: PropTypes.func,
+  onRefetch: PropTypes.func,
 };

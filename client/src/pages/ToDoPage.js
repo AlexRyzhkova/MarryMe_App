@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Header from "../components/Header/Header";
 import List from "../components/List/List";
 import filterIconSrc from "../assets/filter.svg";
@@ -6,19 +6,12 @@ import addNewIconSrc from "../assets/addNew.svg";
 import styled from "@emotion/styled";
 import { getToDo, getTodos } from "../api/fetchToDos";
 import CreateToDo from "./CreateToDo";
+import useAsync from "../hooks/useAsync";
 
 export const ToDoPage = () => {
-  const [toDos, setTodos] = useState(null);
   const [showModal, setShowModal] = useState(false);
   const [toDo, setToDo] = useState(null);
-
-  useEffect(() => {
-    const doGetToDos = async () => {
-      const newToDos = await getTodos();
-      setTodos(newToDos);
-    };
-    doGetToDos();
-  }, []);
+  const { data: toDos, error, loading, refetch } = useAsync(getTodos);
 
   const handleCloseClick = () => {
     setShowModal(false);
@@ -37,11 +30,21 @@ export const ToDoPage = () => {
       <Header />
       <Main>
         {showModal && (
-          <CreateToDo handleCloseClick={handleCloseClick} toDo={toDo} />
+          <CreateToDo
+            handleCloseClick={handleCloseClick}
+            onSetShowModal={setShowModal}
+            toDo={toDo}
+            onRefetch={refetch}
+          />
         )}
         <h2>To-Do Liste</h2>
         <img src={filterIconSrc} alt="Filter button" />
-        <List items={toDos} onClick={(id) => showDetailModal(id)} />
+        <List
+          items={toDos}
+          onClick={(id) => showDetailModal(id)}
+          error={error}
+          loading={loading}
+        />
         <OpenButton onClick={() => setShowModal(true)}>
           <img src={addNewIconSrc} alt="Plus button" />
         </OpenButton>

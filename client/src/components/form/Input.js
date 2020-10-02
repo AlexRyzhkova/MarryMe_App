@@ -11,6 +11,7 @@ const Input = ({ topic, type, value, onChange, placeholder }) => {
         value={value}
         onChange={onChange}
         placeholder={placeholder}
+        required
       />
     </StyledInput>
   );

@@ -6,7 +6,12 @@ import styled from "@emotion/styled";
 import PropTypes from "prop-types";
 import closeIconSrc from "../assets/close.svg";
 
-export default function CreateToDo({ handleCloseClick, toDo }) {
+export default function CreateToDo({
+  handleCloseClick,
+  toDo,
+  onSetShowModal,
+  onRefetch,
+}) {
   return (
     <Modal>
       <CreateToDoContainer>
@@ -14,7 +19,11 @@ export default function CreateToDo({ handleCloseClick, toDo }) {
           <img src={closeIconSrc} alt="close button" />
         </CloseButton>
         <h2>Neues ToDo</h2>
-        <Form toDo={toDo} />
+        <Form
+          toDo={toDo}
+          onSetShowModal={onSetShowModal}
+          onRefetch={onRefetch}
+        />
       </CreateToDoContainer>
     </Modal>
   );
@@ -41,4 +50,6 @@ const CloseButton = styled.button`
 CreateToDo.propTypes = {
   handleCloseClick: PropTypes.func,
   toDo: PropTypes.any,
+  onSetShowModal: PropTypes.func,
+  onRefetch: PropTypes.func,
 };
