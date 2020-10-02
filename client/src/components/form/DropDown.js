@@ -1,15 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import Dropdown from "react-dropdown";
 import "react-dropdown/style.css";
 import styled from "@emotion/styled";
+import PropTypes from "prop-types";
 
-const DropDown = () => {
-  const [category, setCategory] = useState("");
-
-  function handleCategoryChange(category) {
-    setCategory(category.value);
-  }
-
+const DropDown = ({ category, handleCategoryChange }) => {
   const options = [
     "",
     "Location",
@@ -43,3 +38,7 @@ const DropdownContainer = styled.div`
   flex-direction: row;
   font-size: 0.9em;
 `;
+DropDown.propTypes = {
+  category: PropTypes.string,
+  handleCategoryChange: PropTypes.func,
+};

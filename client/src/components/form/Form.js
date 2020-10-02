@@ -5,24 +5,41 @@ import Input from "./Input";
 import Button from "./Button";
 import DropDown from "./DropDown";
 import { postTodo } from "../../api/postToDo";
-import DeleteButton from "../DeleteButton";
+// import DeleteButton from "../DeleteButton";
+// import { deleteTodo } from "../../api/deleteToDo";
 
-const Form = ({ topic, placeholder, category }) => {
+const Form = ({ topic, placeholder, toDoId, toDo }) => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
+  const [category, setCategory] = useState("");
+  const [loading, setLoading] = useState(false);
+  // const [deleteToDo, setDeleteToDo] = useState();
 
   async function handleSubmit(event) {
     event.preventDefault();
     const toDo = { title, category, description };
-
+    setLoading(true);
     await postTodo(toDo);
   }
+
+  function handleCategoryChange(category) {
+    setCategory(category.value);
+  }
+
+  // async function handleDeleteToDo(event) {
+  //   event.preventDefault();
+  //   await deleteTodo(toDoId);
+  //   deleteToDo();
+  //   setDeleteToDo(true);
+  // }
+
   return (
     <StyledForm onSubmit={handleSubmit}>
       <Input
+        required="required"
         value={title}
         topic="Titel"
-        placeholder="neues ToDo"
+        placeholder={toDo ? toDo.title : "neues ToDo"}
         onChange={(event) => {
           setTitle(event.target.value);
         }}
@@ -30,14 +47,17 @@ const Form = ({ topic, placeholder, category }) => {
       <Input
         value={description}
         topic="Beschreibung"
-        placeholder="ToDo Beschreibung"
+        placeholder={toDo ? toDo.description : "ToDo Beschreibung"}
         onChange={(event) => {
           setDescription(event.target.value);
         }}
       />
-      <DropDown category />
-      <DeleteButton />
-      <Button type="submit" />
+      <DropDown
+        category={category}
+        handleCategoryChange={handleCategoryChange}
+      />
+      {/* <DeleteButton onClick={handleDeleteToDo} /> */}
+      <Button type="submit" disabled={!title || loading} />
     </StyledForm>
   );
 };
@@ -72,4 +92,6 @@ Form.propTypes = {
   placeholder: PropTypes.string,
   topic: PropTypes.string,
   category: PropTypes.string,
+  toDoId: PropTypes.any,
+  toDo: PropTypes.any,
 };
