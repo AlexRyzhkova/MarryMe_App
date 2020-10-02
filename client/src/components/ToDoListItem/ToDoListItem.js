@@ -34,8 +34,9 @@ const Button = styled.button`
   grid-template-columns: 10% 1fr auto;
   outline: none;
   box-shadow: 2px 2px 6px 0px lightgrey;
-  border-color: #707070;
   column-gap: 10px;
+  cursor: pointer;
+  border: none;
 `;
 
 const CompletedButton = styled.button`
@@ -43,7 +44,7 @@ const CompletedButton = styled.button`
   grid-column: 1/2;
   outline: none;
   border: none;
-  /* background-color: #ffffff; */
+  background-color: #ffffff;
   align-self: center;
 `;
 

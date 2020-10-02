@@ -4,12 +4,15 @@ import Form from "../components/form/Form";
 import Modal from "../components/Modal";
 import styled from "@emotion/styled";
 import PropTypes from "prop-types";
+import closeIconSrc from "../assets/close.svg";
 
 export default function CreateToDo({ handleCloseClick, toDo }) {
   return (
     <Modal>
       <CreateToDoContainer>
-        <button onClick={handleCloseClick}>close</button>
+        <CloseButton onClick={handleCloseClick}>
+          <img src={closeIconSrc} alt="close button" />
+        </CloseButton>
         <h2>Neues ToDo</h2>
         <Form toDo={toDo} />
       </CreateToDoContainer>
@@ -26,6 +29,13 @@ const CreateToDoContainer = styled.div`
   h2 {
     padding-bottom: 2em;
   }
+`;
+const CloseButton = styled.button`
+  background: transparent;
+  border: none;
+  align-self: flex-start;
+  outline: none;
+  cursor: pointer;
 `;
 
 CreateToDo.propTypes = {
