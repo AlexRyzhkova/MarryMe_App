@@ -4,12 +4,13 @@ import List from "../components/List/List";
 import filterIconSrc from "../assets/filter.svg";
 import addNewIconSrc from "../assets/addNew.svg";
 import styled from "@emotion/styled";
-import { getTodos } from "../api/fetchToDos";
+import { getToDo, getTodos } from "../api/fetchToDos";
 import CreateToDo from "./CreateToDo";
 
 export const ToDoPage = () => {
   const [toDos, setTodos] = useState(null);
   const [showModal, setShowModal] = useState(false);
+  const [toDo, setToDo] = useState(null);
 
   useEffect(() => {
     const doGetToDos = async () => {
@@ -19,17 +20,28 @@ export const ToDoPage = () => {
     doGetToDos();
   }, []);
 
+  const handleCloseClick = () => {
+    setShowModal(false);
+    setToDo(null);
+  };
+
+  const showDetailModal = async (id) => {
+    const toDoDetails = await getToDo(id);
+    setToDo(toDoDetails);
+    console.log(toDoDetails);
+    setShowModal(true);
+  };
+
   return (
     <Container>
       <Header />
       <Main>
-        {showModal && <CreateToDo />}
+        {showModal && (
+          <CreateToDo handleCloseClick={handleCloseClick} toDo={toDo} />
+        )}
         <h2>To-Do Liste</h2>
         <img src={filterIconSrc} alt="Filter button" />
-        <List items={toDos} />
-        {showModal && (
-          <CloseButton onClick={() => setShowModal(false)}>close</CloseButton>
-        )}
+        <List items={toDos} onClick={(id) => showDetailModal(id)} />
         <OpenButton onClick={() => setShowModal(true)}>
           <img src={addNewIconSrc} alt="Plus button" />
         </OpenButton>
@@ -65,14 +77,6 @@ const Main = styled.div`
     align-self: flex-end;
     padding: 0 20px 10px 0;
   }
-`;
-
-const CloseButton = styled.button`
-  z-index: 3;
-  background-color: hotpink;
-  position: absolute;
-  top: 20%;
-  left: 20%;
 `;
 
 const OpenButton = styled.button`

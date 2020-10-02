@@ -3,7 +3,7 @@ import ToDoListItem from "../ToDoListItem/ToDoListItem";
 import styled from "@emotion/styled";
 import PropTypes from "prop-types";
 
-const List = ({ items = [] }) => {
+const List = ({ items = [], onClick }) => {
   return (
     <ListContainer>
       {items?.map((item) => (
@@ -11,8 +11,10 @@ const List = ({ items = [] }) => {
           key={item.id}
           title={item.title}
           category={item.category}
-          infos={item.infos}
+          description={item.description}
           completed={item.completed}
+          toDoId={item.Id}
+          onClick={() => onClick(item.id)}
         />
       ))}
     </ListContainer>
@@ -35,4 +37,5 @@ const ListContainer = styled.div`
 
 List.propTypes = {
   items: PropTypes.array,
+  onClick: PropTypes.func,
 };
