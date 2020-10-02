@@ -5,15 +5,14 @@ import Input from "./Input";
 import Button from "./Button";
 import DropDown from "./DropDown";
 import { postTodo } from "../../api/postToDo";
-// import DeleteButton from "../DeleteButton";
-// import { deleteTodo } from "../../api/deleteToDo";
+import DeleteButton from "../DeleteButton";
+import { deleteTodo } from "../../api/deleteToDo";
 
 const Form = ({ topic, placeholder, toDoId, toDo }) => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [category, setCategory] = useState("");
   const [loading, setLoading] = useState(false);
-  // const [deleteToDo, setDeleteToDo] = useState();
 
   async function handleSubmit(event) {
     event.preventDefault();
@@ -26,12 +25,10 @@ const Form = ({ topic, placeholder, toDoId, toDo }) => {
     setCategory(category.value);
   }
 
-  // async function handleDeleteToDo(event) {
-  //   event.preventDefault();
-  //   await deleteTodo(toDoId);
-  //   deleteToDo();
-  //   setDeleteToDo(true);
-  // }
+  async function handleDeleteToDo(event) {
+    event.preventDefault();
+    await deleteTodo(toDo.id);
+  }
 
   return (
     <StyledForm onSubmit={handleSubmit}>
@@ -56,7 +53,7 @@ const Form = ({ topic, placeholder, toDoId, toDo }) => {
         category={category}
         handleCategoryChange={handleCategoryChange}
       />
-      {/* <DeleteButton onClick={handleDeleteToDo} /> */}
+      <DeleteButton type="button" onClick={handleDeleteToDo} />
       <Button type="submit" disabled={!title || loading} />
     </StyledForm>
   );
@@ -94,4 +91,5 @@ Form.propTypes = {
   category: PropTypes.string,
   toDoId: PropTypes.any,
   toDo: PropTypes.any,
+  handleDeleteToDo: PropTypes.func,
 };

@@ -1,10 +1,11 @@
 import React from "react";
 import deleteIconSrc from "../assets/delete.svg";
 import styled from "@emotion/styled";
+import PropTypes from "prop-types";
 
-const DeleteButton = () => {
+const DeleteButton = ({ onClick }) => {
   return (
-    <StyledButton>
+    <StyledButton onClick={onClick}>
       <img src={deleteIconSrc} alt="Dustbin" />
       <p>ToDo löschen</p>
     </StyledButton>
@@ -29,3 +30,7 @@ const StyledButton = styled.button`
     align-self: center;
   }
 `;
+
+DeleteButton.propTypes = {
+  onClick: PropTypes.func,
+};
