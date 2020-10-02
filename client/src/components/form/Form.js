@@ -37,6 +37,7 @@ const Form = ({
   async function handleDeleteToDo(event) {
     event.preventDefault();
     await deleteTodo(toDo.id);
+    await onRefetch();
   }
 
   return (
