@@ -4,9 +4,15 @@ import PropTypes from "prop-types";
 import completedSrc from "../../assets/completed.svg";
 import uncompletedSrc from "../../assets/uncompleted.svg";
 
-const ToDoListItem = ({ title, category, completed, onCompletedClick }) => {
+const ToDoListItem = ({
+  title,
+  category,
+  completed,
+  onCompletedClick,
+  onClick,
+}) => {
   return (
-    <Button>
+    <Button onClick={onClick}>
       <CompletedButton onClick={onCompletedClick}>
         <img src={completed ? completedSrc : uncompletedSrc} alt="Checkmark" />
       </CompletedButton>
@@ -28,8 +34,9 @@ const Button = styled.button`
   grid-template-columns: 10% 1fr auto;
   outline: none;
   box-shadow: 2px 2px 6px 0px lightgrey;
-  border-color: #707070;
   column-gap: 10px;
+  cursor: pointer;
+  border: none;
 `;
 
 const CompletedButton = styled.button`
@@ -37,7 +44,7 @@ const CompletedButton = styled.button`
   grid-column: 1/2;
   outline: none;
   border: none;
-  /* background-color: #ffffff; */
+  background-color: #ffffff;
   align-self: center;
 `;
 
@@ -59,4 +66,5 @@ ToDoListItem.propTypes = {
   category: PropTypes.string,
   completed: PropTypes.bool,
   onCompletedClick: PropTypes.func,
+  onClick: PropTypes.func,
 };

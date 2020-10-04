@@ -46,7 +46,7 @@ const GlobalStyles = () => {
         button {
           font-family: --font-roboto;
           font-size: 1.1em;
-          background-color: white;
+          /* background-color: white; */
         }
         h1 {
           font-family: var(--font-lora);
