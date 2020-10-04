@@ -6,24 +6,46 @@ import Button from "./Button";
 import DropDown from "./DropDown";
 import { postTodo } from "../../api/postToDo";
 import DeleteButton from "../DeleteButton";
+import { deleteTodo } from "../../api/deleteToDo";
 
-const Form = ({ topic, placeholder, category }) => {
+const Form = ({
+  topic,
+  placeholder,
+  toDoId,
+  toDo,
+  onSetShowModal,
+  onRefetch,
+}) => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
+  const [category, setCategory] = useState("");
+  // const [loading, setLoading] = useState(false);
 
   async function handleSubmit(event) {
     event.preventDefault();
     const toDo = { title, category, description };
-
+    // setLoading(true);
     await postTodo(toDo);
+    onSetShowModal(false);
+    await onRefetch();
   }
+
+  function handleCategoryChange(category) {
+    setCategory(category.value);
+  }
+
+  async function handleDeleteToDo(event) {
+    event.preventDefault();
+    await deleteTodo(toDo.id);
+    await onRefetch();
+  }
+
   return (
-    <FormContainer>
+    <StyledForm onSubmit={handleSubmit}>
       <Input
-        onSubmit={handleSubmit}
         value={title}
         topic="Titel"
-        placeholder="neues ToDo"
+        placeholder={toDo ? toDo.title : "neues ToDo"}
         onChange={(event) => {
           setTitle(event.target.value);
         }}
@@ -31,15 +53,18 @@ const Form = ({ topic, placeholder, category }) => {
       <Input
         value={description}
         topic="Beschreibung"
-        placeholder="ToDo Beschreibung"
+        placeholder={toDo ? toDo.description : "ToDo Beschreibung"}
         onChange={(event) => {
           setDescription(event.target.value);
         }}
       />
-      <DropDown />
-      <DeleteButton />
+      <DropDown
+        category={category}
+        handleCategoryChange={handleCategoryChange}
+      />
+      <DeleteButton type="button" onClick={handleDeleteToDo} />
       <Button />
-    </FormContainer>
+    </StyledForm>
   );
 };
 
@@ -47,12 +72,12 @@ export default Form;
 
 //styling
 
-const FormContainer = styled.form`
+const StyledForm = styled.form`
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
-  /* justify-content: space-around; */
-  /* margin: 2em; */
+  background-color: #cebebe;
+  z-index: 2;
+  width: 100%;
 
   button:first-of-type {
     align-self: flex-end;
@@ -60,7 +85,7 @@ const FormContainer = styled.form`
     padding-right: 2em;
   }
   button:last-of-type {
-    margin-top: 5em;
+    margin: 3em 0px;
     align-self: center;
   }
 
@@ -73,4 +98,9 @@ Form.propTypes = {
   placeholder: PropTypes.string,
   topic: PropTypes.string,
   category: PropTypes.string,
+  toDoId: PropTypes.any,
+  toDo: PropTypes.any,
+  handleDeleteToDo: PropTypes.func,
+  onSetShowModal: PropTypes.func,
+  onRefetch: PropTypes.func,
 };

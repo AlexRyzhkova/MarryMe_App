@@ -11,6 +11,7 @@ const Input = ({ topic, type, value, onChange, placeholder }) => {
         value={value}
         onChange={onChange}
         placeholder={placeholder}
+        required
       />
     </StyledInput>
   );
@@ -23,7 +24,7 @@ const StyledInput = styled.label`
   width: 100%;
   height: auto;
   margin-bottom: 2em;
-  grid-column-gap: 2.5em;
+  grid-column-gap: 1em;
 
   p {
     margin: 0px;
