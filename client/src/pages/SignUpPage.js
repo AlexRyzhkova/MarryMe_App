@@ -3,8 +3,11 @@ import SignUpForm from "../components/signUpForm/SignUpForm";
 import HeaderSignUp from "../components/headerSignUp/HeaderSignUp";
 import signUpPictureSrc from "../assets/signUpBg.png";
 import styled from "@emotion/styled";
-
+// import useAsync from "../hooks/useAsync";
+// import postAccount from "../apiAccount/postAccount";
 export const SignUpPage = () => {
+  // const { data: account, error, loading, refetch } = useAsync(postAccount);
+
   return (
     <Container>
       <HeaderSignUp />
@@ -30,13 +33,11 @@ const Container = styled.div`
   flex-direction: column;
   height: 100vh;
   form {
-    padding-top: 5em;
+    padding: 3em 0;
     align-self: stretch;
-
-    /* background-color: red; */
   }
   h2 {
-    padding-top: 5em;
+    padding-top: 1em;
     align-self: center;
   }
 `;
@@ -46,9 +47,9 @@ const ImageContainer = styled.div`
   height: 100%;
   background: url(${signUpPictureSrc});
   background-repeat: no-repeat;
-  /* background-position: center; */
-  background-attachment: fixed;
-  background-size: contain;
+  background-position: 40% 60%;
+  background-size: cover;
+  background-position: right;
   align-items: center;
   justify-items: center;
 

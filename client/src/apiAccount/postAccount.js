@@ -1,4 +1,4 @@
-export const postAccount = async (account) => {
+const postAccount = async (account) => {
   const response = await fetch("/api/account", {
     method: "POST",
     headers: { Accept: "application/json", "Content-Type": "application/json" },
@@ -11,3 +11,5 @@ export const postAccount = async (account) => {
 
   return response;
 };
+
+export default postAccount;

@@ -2,27 +2,51 @@ import React from "react";
 import styled from "@emotion/styled";
 import { useForm } from "react-hook-form";
 import SignUpButton from "../signUpButton/SignUpButton";
-
+import postAccount from "../../apiAccount/postAccount";
 const SignUpForm = () => {
-  const { register, handleSubmit } = useForm();
-  const onSubmit = (data) => console.log(data);
+  const { register, handleSubmit, errors } = useForm();
+
+  const onSubmit = async (data) => {
+    await postAccount(data);
+    console.log(data);
+  };
 
   return (
     <Form>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <label>Dein Name</label>
-        <input name="DeinName" placeholder="Name" ref={register()} />
-        {/* {errors.DeinName && <p>Das ist ein Pflichtfeld</p>} */}
-        <label>Name des Partners</label>
-        <input
-          name="PartnerName"
-          placeholder="Name"
-          ref={register({ required: true })}
-        />
-        {/* {errors.PartnerName && <p>Das ist ein Pflichtfeld</p>} */}
-        <label>Datum und Zeit</label>
-        <input name="DateTime" placeholder="Datum" ref={register()} />
-        {/* {errors.DateTime && <p>Das ist ein Pflichtfeld</p>} */}
+        <section>
+          <label htmlFor="name">Braut</label>
+          <input
+            id="name"
+            autoComplete="off"
+            name="DeinName"
+            placeholder="Name"
+            ref={register({ required: true })}
+          />
+        </section>
+        {errors.DeinName && <small>Bitte ausfüllen</small>}
+        <section>
+          <label htmlFor="Bräutigam">Bräutigam</label>
+          <input
+            id="Bräutigam"
+            autoComplete="off"
+            name="PartnerName"
+            placeholder="Name"
+            ref={register({ required: true })}
+          />
+        </section>
+        {errors.PartnerName && <small>Bitte ausfüllen</small>}
+        <section>
+          <label htmlFor="Datum">Datum</label>
+          <input
+            id="Datum"
+            type="date"
+            name="DateTime"
+            placeholder="Datum"
+            ref={register({ required: true })}
+          />
+        </section>
+        {errors.DateTime && <small>Bitte ausfüllen</small>}
         <SignUpButton />
       </form>
     </Form>
@@ -33,29 +57,36 @@ export default SignUpForm;
 //styling
 
 const Form = styled.div`
-  padding: 0 10px;
   form {
-    display: grid;
-    grid-template-columns: auto 60%;
-    grid-template-rows: 1fr 1fr 1fr auto;
-    align-content: space-between;
-    align-items: space-between;
-    grid-row-gap: 1.8em;
-    grid-column-gap: 3em;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+  }
+  section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em;
+    label {
+      margin-left: 2em;
+    }
+
+    input {
+      margin-right: 3em;
+      outline: none;
+      border: none;
+      border-bottom: 1px solid #383636;
+      background-color: transparent;
+    }
+  }
+
+  small {
+    align-self: center;
+    color: #de3a3a;
   }
   button {
-    margin-top: 0.5em;
-    grid-column: 1/3;
-    justify-self: center;
-  }
-  label {
+    margin-top: 2em;
     align-self: center;
-  }
-  input {
-    width: 80%;
-    outline: none;
-    border: none;
-    border-bottom: 1px solid #383636;
-    background-color: transparent;
   }
 `;
