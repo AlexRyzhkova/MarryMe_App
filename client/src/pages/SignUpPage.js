@@ -3,11 +3,8 @@ import SignUpForm from "../components/signUpForm/SignUpForm";
 import HeaderSignUp from "../components/headerSignUp/HeaderSignUp";
 import signUpPictureSrc from "../assets/signUpBg.png";
 import styled from "@emotion/styled";
-// import useAsync from "../hooks/useAsync";
-// import postAccount from "../apiAccount/postAccount";
-export const SignUpPage = () => {
-  // const { data: account, error, loading, refetch } = useAsync(postAccount);
 
+export const SignUpPage = () => {
   return (
     <Container>
       <HeaderSignUp />
@@ -19,7 +16,6 @@ export const SignUpPage = () => {
         </h1>
       </ImageContainer>
       <h2>Melde dich an </h2>
-      {/* <img src={signUpPictureSrc} alt="Flowers" /> */}
       <SignUpForm />
     </Container>
   );
