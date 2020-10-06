@@ -5,7 +5,14 @@ export default function Home() {
   return (
     <div>
       Home (in Arbeit)
-      <Link to="/todos">ToDo Liste</Link>
+      <ul>
+        <li>
+          <Link to="/todos">ToDo Liste</Link>
+        </li>
+        <li>
+          <Link to="/account">Create Account</Link>
+        </li>
+      </ul>
     </div>
   );
 }
