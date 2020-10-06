@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { ToDoPage } from "./pages/ToDoPage";
 import CreateToDo from "./pages/CreateToDo";
 import Home from "./pages/Home";
+import Menu from "./components/menu/Menu";
 
 function App() {
   return (
@@ -13,6 +14,9 @@ function App() {
         <Switch>
           <Route path="/todos/createtodo">
             <CreateToDo />
+          </Route>
+          <Route path="/menu">
+            <Menu />
           </Route>
           <Route path="/todos">
             <ToDoPage />

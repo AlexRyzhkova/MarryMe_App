@@ -1,14 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "@emotion/styled";
 import logoSrc from "../../assets/logo.svg";
 import MenuIconSrc from "../../assets/menu.svg";
+// import { BrowserRouter as Router, Link } from "react-router-dom";
+import Menu from "../menu/Menu";
 
-const Header = () => {
+const Header = (props) => {
+  const [open, setOpen] = useState(false);
+
   return (
     <Container>
-      <MenuButton>
+      <MenuButton open={open} onClick={() => setOpen(!open)}>
         <img src={MenuIconSrc} alt="Menu icon" />
       </MenuButton>
+      <Menu open={open} />
       <Logo src={logoSrc} alt="Marry me logo" />
     </Container>
   );
