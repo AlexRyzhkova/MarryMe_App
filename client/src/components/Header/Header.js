@@ -10,8 +10,13 @@ const Header = (props) => {
 
   return (
     <Container>
-      <MenuButton open={open} onClick={() => setOpen(!open)}>
-        <img src={MenuIconSrc} alt="Menu icon" />
+      <MenuButton>
+        <img
+          open={open}
+          onClick={() => setOpen(!open)}
+          src={MenuIconSrc}
+          alt="Menu icon"
+        />
       </MenuButton>
       <Menu open={open} />
       <Logo src={logoSrc} alt="Marry me logo" />
@@ -37,6 +42,11 @@ const MenuButton = styled.button`
   border: none;
   position: absolute;
   left: 2 rem;
+  img {
+    position: ${({ open }) => (open ? "fixed" : "relative")};
+    fill: ${({ open }) => (open ? "#383636" : "white")};
+    z-index: 50;
+  }
 `;
 
 const Logo = styled.img`

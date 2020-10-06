@@ -3,15 +3,13 @@ import styled from "@emotion/styled";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
-const MenuListItem = ({ link, text, icon, description }) => {
+const MenuListItem = ({ to, text, icon, description }) => {
   return (
     <Container>
-      <li>
-        <Link to={link}>
-          <img src={icon} alt={description} />
-          {text}
-        </Link>
-      </li>
+      <Link to={to}>
+        <img src={icon} alt={description} />
+        {text}
+      </Link>
     </Container>
   );
 };
@@ -24,7 +22,8 @@ const Container = styled.li`
   list-style-type: none;
   a {
     display: flex;
-    padding: 0.6rem 0rem;
+    padding-top: 2rem;
+    padding-left: 0.5rem;
     max-width: 90%;
     align-items: center;
     text-decoration: none;
@@ -38,7 +37,7 @@ const Container = styled.li`
 `;
 
 MenuListItem.propTypes = {
-  link: PropTypes.any,
+  to: PropTypes.any,
   text: PropTypes.string,
   icon: PropTypes.any,
   description: PropTypes.string,

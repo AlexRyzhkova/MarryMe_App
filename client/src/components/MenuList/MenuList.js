@@ -10,7 +10,7 @@ export default MenuList;
 
 //Styling
 const Menu = styled.ul`
-  margin: 0;
+  margin-top: 0;
   list-style: none;
   display: flex;
   border-right: 1.5px solid black;
