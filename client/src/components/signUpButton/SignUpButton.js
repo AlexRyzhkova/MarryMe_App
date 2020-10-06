@@ -15,5 +15,5 @@ const StyledSignUpButton = styled.button`
   border: none;
   cursor: pointer;
   color: var(--font-color-light);
-  background-color: #ad9494;
+  background-color: var(--button-bg-color);
 `;

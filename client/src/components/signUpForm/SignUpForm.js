@@ -6,16 +6,15 @@ import postAccount from "../../apiAccount/postAccount";
 const SignUpForm = () => {
   const { register, handleSubmit, errors } = useForm();
 
-  const onSubmit = async (data) => {
-    await postAccount(data);
-    console.log(data);
+  const onSubmit = async (userData) => {
+    await postAccount(userData);
   };
 
   return (
     <Form>
       <form onSubmit={handleSubmit(onSubmit)}>
         <section>
-          <label htmlFor="name">Braut</label>
+          <label htmlFor="name">Dein Name</label>
           <input
             id="name"
             autoComplete="off"
@@ -26,7 +25,7 @@ const SignUpForm = () => {
         </section>
         {errors.DeinName && <small>Bitte ausfüllen</small>}
         <section>
-          <label htmlFor="Bräutigam">Bräutigam</label>
+          <label htmlFor="Partnername">Partnername</label>
           <input
             id="Bräutigam"
             autoComplete="off"
@@ -78,12 +77,8 @@ const Form = styled.div`
       border: none;
       border-bottom: 1px solid #383636;
       background-color: transparent;
+      color: grey;
     }
-  }
-
-  small {
-    align-self: center;
-    color: #de3a3a;
   }
   button {
     margin-top: 2em;

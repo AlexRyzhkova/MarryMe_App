@@ -24,6 +24,7 @@ const GlobalStyles = () => {
           --menu-bg-color: #cebebe;
           --header-bg-color: #a79292;
           --bubble-bg-color: #cebebe;
+          --button-bg-color: #ad9494;
           --font-lora: "Lora";
           --font-roboto: "Roboto";
         }
@@ -61,6 +62,10 @@ const GlobalStyles = () => {
         p {
           color: var(--font-color-dark);
           font-size: 1.1em;
+        }
+        small {
+          align-self: center;
+          color: #de3a3a;
         }
 
         body {
