@@ -3,11 +3,15 @@ import styled from "@emotion/styled";
 import { useForm } from "react-hook-form";
 import SignUpButton from "../signUpButton/SignUpButton";
 import postAccount from "../../apiAccount/postAccount";
+import { useHistory } from "react-router-dom";
+
 const SignUpForm = () => {
   const { register, handleSubmit, errors } = useForm();
+  const history = useHistory();
 
   const onSubmit = async (userData) => {
     await postAccount(userData);
+    history.push("/");
   };
 
   return (
