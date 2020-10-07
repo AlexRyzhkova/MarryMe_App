@@ -1,25 +1,17 @@
 import React from "react";
 import { getAccount } from "../../apiAccount/fetchAccount";
+import useAsync from "../../hooks/useAsync";
 
 export default function UserData() {
-  console.log(getAccount);
-
-  const [user, setUser] = React.useState(null);
-
-  React.useEffect(() => {
-    const doGetAccount = async () => {
-      const newUser = await getAccount();
-      setUser(newUser);
-    };
-    doGetAccount();
-    console.log(doGetAccount);
-  }, []);
+  const { data: account, error, loading } = useAsync(getAccount);
 
   return (
     <>
-      <div>{user && <h1>{user.yourName}</h1>}</div>
-      <div>{user && <h1>und {user.partnerName} heiraten</h1>}</div>
-      {user && <div>{user.date}</div>}
+      {error && <p>Error</p>}
+      {loading && <p>Loading ...</p>}
+      <div>{account && <h1>{account.yourName}</h1>}</div>
+      <div>{account && <h1>und {account.partnerName} heiraten am</h1>}</div>
+      {account && <h1>{account.date}</h1>}
     </>
   );
 }
