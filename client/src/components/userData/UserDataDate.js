@@ -20,4 +20,5 @@ const Date = styled.div`
   font-family: var(--font-lora);
   font-size: 2.2rem;
   color: var(--font-color-dark);
+  margin: 30px 0;
 `;
