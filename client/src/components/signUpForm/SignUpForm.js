@@ -18,7 +18,7 @@ const SignUpForm = () => {
           <input
             id="name"
             autoComplete="off"
-            name="DeinName"
+            name="yourName"
             placeholder="Name"
             ref={register({ required: true })}
           />
@@ -29,7 +29,7 @@ const SignUpForm = () => {
           <input
             id="Bräutigam"
             autoComplete="off"
-            name="PartnerName"
+            name="partnerName"
             placeholder="Name"
             ref={register({ required: true })}
           />
@@ -40,7 +40,7 @@ const SignUpForm = () => {
           <input
             id="Datum"
             type="date"
-            name="DateTime"
+            name="date"
             placeholder="Datum"
             ref={register({ required: true })}
           />
