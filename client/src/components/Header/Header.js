@@ -2,10 +2,9 @@ import React, { useState } from "react";
 import styled from "@emotion/styled";
 import logoSrc from "../../assets/logo.svg";
 import MenuIconSrc from "../../assets/menu.svg";
-// import { BrowserRouter as Router, Link } from "react-router-dom";
 import Menu from "../menu/Menu";
 
-const Header = (props) => {
+const Header = () => {
   const [open, setOpen] = useState(false);
 
   return (
@@ -42,9 +41,10 @@ const MenuButton = styled.button`
   border: none;
   position: absolute;
   left: 2 rem;
+
   img {
     position: ${({ open }) => (open ? "fixed" : "relative")};
-    fill: ${({ open }) => (open ? "#383636" : "white")};
+    fill: ${({ open }) => (open ? "#383636" : "#fff")};
     z-index: 50;
   }
 `;

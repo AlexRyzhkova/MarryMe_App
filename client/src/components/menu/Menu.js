@@ -11,7 +11,7 @@ const Menu = ({ open }) => {
   return (
     <MenuList open={open}>
       <MenuListItem to="/" text="Home" icon={timeIconSrc} />
-      <MenuListItem to="/todos" text="ToDo's" icon={tasksIconSrc} />
+      <MenuListItem to="/todos" text="To-Do's" icon={tasksIconSrc} />
       <MenuListItem to={"/budget"} text="Budget" icon={euroIconSrc} />
       <MenuListItem to={"/guests"} text="Gästeliste" icon={peopleIconSrc} />
     </MenuList>
