@@ -1,18 +1,20 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { getAccount } from "../apiAccount/fetchAccount";
+import Countdown from "../components/countDown/CountDown";
+import UserDataDate from "../components/userData/UserDataDate";
+import UserDataNames from "../components/userData/UserDataNames";
+import useAsync from "../hooks/useAsync";
 
 export default function Home() {
+  const { data: account, error, loading } = useAsync(getAccount);
+
   return (
     <div>
-      Home (in Arbeit)
-      <ul>
-        <li>
-          <Link to="/todos">ToDo Liste</Link>
-        </li>
-        <li>
-          <Link to="/account">Create Account</Link>
-        </li>
-      </ul>
+      {error && <p>Error</p>}
+      {loading && <p>Loading ...</p>}
+      {account && <UserDataNames account={account} />}
+      {account && <Countdown date={account.date} />}
+      {account && <UserDataDate account={account} />}
     </div>
   );
 }
