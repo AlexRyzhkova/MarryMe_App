@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { getGuests } from "../api/fetchGuests";
 import Header from "../components/Header/Header";
 import ItemsList from "../components/IitemsList/ItemsList";
@@ -6,13 +6,30 @@ import ListItem from "../components/listItem/ListItem";
 import useAsync from "../hooks/useAsync";
 import styled from "@emotion/styled";
 import addNewIconSrc from "../assets/addNew.svg";
+import AddListItem from "./AddListItem";
 
 export default function GuestsList() {
-  const { data: guests } = useAsync(getGuests);
+  const { data: guests, refetch } = useAsync(getGuests);
+
+  const [showModal, setShowModal] = useState(false);
+  const [guest, setGuest] = useState(null);
+
+  const handleCloseClick = () => {
+    setShowModal(false);
+    setGuest(null);
+  };
 
   return (
     <Container>
       <Header />
+      {showModal && (
+        <AddListItem
+          handleCloseClick={handleCloseClick}
+          onSetShowModal={setShowModal}
+          guest={guest}
+          onRefetch={refetch}
+        />
+      )}
       <h2>Gästeliste</h2>
       <ItemsList>
         {guests?.map((guest) => (
@@ -23,7 +40,7 @@ export default function GuestsList() {
           />
         ))}
       </ItemsList>
-      <OpenButton>
+      <OpenButton onClick={() => setShowModal(true)}>
         <img src={addNewIconSrc} alt="Plus button" />
       </OpenButton>
     </Container>

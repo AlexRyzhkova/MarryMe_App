@@ -9,9 +9,9 @@ import DeleteButton from "../DeleteButton";
 import { deleteTodo } from "../../api/deleteToDo";
 
 const Form = ({
-  topic,
-  placeholder,
-  toDoId,
+  // topic,
+  // placeholder,
+  // toDoId,
   toDo,
   onSetShowModal,
   onRefetch,

@@ -5,7 +5,8 @@ import { ToDoPage } from "./pages/ToDoPage";
 import Home from "./pages/Home";
 import Menu from "./components/menu/Menu";
 import SignUpPage from "./pages/SignUpPage";
-import GuestsList from "./pages/GuestsList";
+import GuestsPage from "./pages/GuestsPage";
+import AddListItem from "./pages/AddListItem";
 
 function App() {
   return (
@@ -23,7 +24,10 @@ function App() {
             <ToDoPage />
           </Route>
           <Route path="/guests">
-            <GuestsList />
+            <GuestsPage />
+          </Route>
+          <Route path="/newguest">
+            <AddListItem />
           </Route>
           <Route path="/">
             <Home />
