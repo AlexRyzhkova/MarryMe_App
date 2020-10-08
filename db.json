@@ -26,8 +26,66 @@
     }
   ],
   "account": {
-    "name": "Sasha",
-    "partnerName": "Sven",
-    "date": "2022-06-12T13:07:12.706Z"
-  }
+    "name": "Anna",
+    "partnerName": "Max",
+    "date": "2021-06-12T13:07:12.706Z"
+  },
+
+  "guests": [
+    {
+      "id": 1,
+      "firstname": "Max",
+      "lastname": "Mustermann"
+    },
+    {
+      "id": 2,
+      "firstname": "Max",
+      "lastname": "Mustermann"
+    },
+    {
+      "id": 3,
+      "firstname": "Max",
+      "lastname": "Mustermann"
+    },
+    {
+      "id": 4,
+      "firstname": "Max",
+      "lastname": "Mustermann"
+    },
+    {
+      "id": 5,
+      "firstname": "Max",
+      "lastname": "Mustermann"
+    },
+    {
+      "id": 6,
+      "firstname": "Max",
+      "lastname": "Mustermann"
+    },
+    {
+      "id": 7,
+      "firstname": "Max",
+      "lastname": "Mustermann"
+    },
+    {
+      "id": 8,
+      "firstname": "Max",
+      "lastname": "Mustermann"
+    },
+    {
+      "id": 9,
+      "firstname": "Max",
+      "lastname": "Mustermann"
+    },
+    {
+      "id": 10,
+      "firstname": "Max",
+      "lastname": "Mustermann"
+    },
+    {
+      "id": 11,
+      "firstname": "Max",
+      "lastname": "Mustermann"
+    }
+  ]
 }

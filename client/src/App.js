@@ -5,6 +5,7 @@ import { ToDoPage } from "./pages/ToDoPage";
 import Home from "./pages/Home";
 import Menu from "./components/menu/Menu";
 import SignUpPage from "./pages/SignUpPage";
+import GuestsList from "./pages/GuestsList";
 
 function App() {
   return (
@@ -20,6 +21,9 @@ function App() {
           </Route>
           <Route path="/todos">
             <ToDoPage />
+          </Route>
+          <Route path="/guests">
+            <GuestsList />
           </Route>
           <Route path="/">
             <Home />
