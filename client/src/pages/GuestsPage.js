@@ -9,7 +9,7 @@ import addNewIconSrc from "../assets/addNew.svg";
 import AddListItem from "./AddListItem";
 import PropTypes from "prop-types";
 
-export default function GuestsPage({ onClick }) {
+export default function GuestsPage({ onClick, onRefetch }) {
   const { data: guests, refetch } = useAsync(getGuests);
 
   const [showModal, setShowModal] = useState(false);
@@ -32,7 +32,7 @@ export default function GuestsPage({ onClick }) {
         />
       )}
       <h2>Gästeliste</h2>
-      <ItemsList onClick={onClick}>
+      <ItemsList onClick={onClick} onRefetch={onRefetch}>
         {guests?.map((guest) => (
           <ListItem
             key={guest.id}
@@ -81,4 +81,5 @@ const OpenButton = styled.button`
 
 GuestsPage.propTypes = {
   onClick: PropTypes.func,
+  onRefetch: PropTypes.func,
 };

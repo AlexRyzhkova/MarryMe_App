@@ -3,6 +3,7 @@ import deleteIconSrc from "../../assets/delete.svg";
 import styled from "@emotion/styled";
 import PropTypes from "prop-types";
 import deleteGuest from "../../api/deleteGuest";
+import useAsync from "../../hooks/useAsync";
 
 export default function ListItem({
   guest,
@@ -11,10 +12,12 @@ export default function ListItem({
   onRefetch,
   guestId,
 }) {
+  const { refetch } = useAsync(deleteGuest);
+
   async function handleDeleteGuest(event) {
     event.preventDefault();
     await deleteGuest(guestId);
-    await onRefetch();
+    await refetch();
   }
 
   return (
@@ -22,7 +25,7 @@ export default function ListItem({
       <p>
         {firstname} {lastname}
       </p>
-      <button onClick={handleDeleteGuest} onRefetch={onRefetch}>
+      <button onClick={handleDeleteGuest} onRefetch={refetch}>
         <img src={deleteIconSrc} alt="Trash can" />
       </button>
     </Container>
