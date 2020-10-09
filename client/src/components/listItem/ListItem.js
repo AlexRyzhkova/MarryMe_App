@@ -31,7 +31,7 @@ export default function ListItem({
 
 //Styling
 
-const Container = styled.div`
+const Container = styled.section`
   display: flex;
   justify-content: space-between;
   align-items: center;

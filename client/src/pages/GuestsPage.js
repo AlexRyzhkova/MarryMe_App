@@ -58,7 +58,7 @@ const Container = styled.div`
   overflow: auto;
   position: relative;
 
-  section {
+  div:first-child {
     position: sticky;
     top: 0;
   }

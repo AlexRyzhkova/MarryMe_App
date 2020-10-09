@@ -26,7 +26,7 @@ const Header = () => {
 export default Header;
 
 //Styling
-const Container = styled.section`
+const Container = styled.div`
   background-color: #a79292;
   display: flex;
   padding: 5px;
