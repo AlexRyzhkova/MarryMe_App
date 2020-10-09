@@ -7,8 +7,9 @@ import useAsync from "../hooks/useAsync";
 import styled from "@emotion/styled";
 import addNewIconSrc from "../assets/addNew.svg";
 import AddListItem from "./AddListItem";
+import PropTypes from "prop-types";
 
-export default function GuestsList() {
+export default function GuestsPage({ onClick }) {
   const { data: guests, refetch } = useAsync(getGuests);
 
   const [showModal, setShowModal] = useState(false);
@@ -31,12 +32,14 @@ export default function GuestsList() {
         />
       )}
       <h2>Gästeliste</h2>
-      <ItemsList>
+      <ItemsList onClick={onClick}>
         {guests?.map((guest) => (
           <ListItem
             key={guest.id}
             firstname={guest.firstname}
             lastname={guest.lastname}
+            onClick={onClick}
+            guestId={guest.id}
           />
         ))}
       </ItemsList>
@@ -75,3 +78,7 @@ const OpenButton = styled.button`
   bottom: 0;
   padding: 1em;
 `;
+
+GuestsPage.propTypes = {
+  onClick: PropTypes.func,
+};

@@ -2,14 +2,27 @@ import React from "react";
 import deleteIconSrc from "../../assets/delete.svg";
 import styled from "@emotion/styled";
 import PropTypes from "prop-types";
+import deleteGuest from "../../api/deleteGuest";
 
-export default function ListItem({ firstname, lastname }) {
+export default function ListItem({
+  guest,
+  firstname,
+  lastname,
+  onRefetch,
+  guestId,
+}) {
+  async function handleDeleteGuest(event) {
+    event.preventDefault();
+    await deleteGuest(guestId);
+    await onRefetch();
+  }
+
   return (
     <Container>
       <p>
         {firstname} {lastname}
       </p>
-      <button>
+      <button onClick={handleDeleteGuest} onRefetch={onRefetch}>
         <img src={deleteIconSrc} alt="Trash can" />
       </button>
     </Container>
@@ -49,4 +62,7 @@ ListItem.propTypes = {
   text: PropTypes.string,
   firstname: PropTypes.string,
   lastname: PropTypes.string,
+  guest: PropTypes.array,
+  onRefetch: PropTypes.func,
+  guestId: PropTypes.any,
 };

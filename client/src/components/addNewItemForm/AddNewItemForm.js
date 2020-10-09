@@ -4,7 +4,6 @@ import styled from "@emotion/styled";
 import Input from "../form/Input";
 import Button from "../form/Button";
 import { postGuest } from "../../api/postGuest";
-// import { deleteTodo } from "../../api/deleteToDo";
 
 const AddNewItem = ({ guest, onSetShowModal, onRefetch }) => {
   const [firstname, setFirstname] = useState("");
@@ -17,12 +16,6 @@ const AddNewItem = ({ guest, onSetShowModal, onRefetch }) => {
     onSetShowModal(false);
     await onRefetch();
   }
-
-  //   async function handleDeleteguest(event) {
-  //     event.preventDefault();
-  //     await deleteguest(guest.id);
-  //     await onRefetch();
-  //   }
 
   return (
     <StyledForm onSubmit={handleSubmit}>
