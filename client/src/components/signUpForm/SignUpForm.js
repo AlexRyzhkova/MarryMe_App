@@ -3,11 +3,15 @@ import styled from "@emotion/styled";
 import { useForm } from "react-hook-form";
 import SignUpButton from "../signUpButton/SignUpButton";
 import postAccount from "../../apiAccount/postAccount";
+import { useHistory } from "react-router-dom";
+
 const SignUpForm = () => {
   const { register, handleSubmit, errors } = useForm();
+  const history = useHistory();
 
   const onSubmit = async (userData) => {
     await postAccount(userData);
+    history.push("/");
   };
 
   return (
@@ -18,7 +22,7 @@ const SignUpForm = () => {
           <input
             id="name"
             autoComplete="off"
-            name="DeinName"
+            name="yourName"
             placeholder="Name"
             ref={register({ required: true })}
           />
@@ -29,7 +33,7 @@ const SignUpForm = () => {
           <input
             id="Bräutigam"
             autoComplete="off"
-            name="PartnerName"
+            name="partnerName"
             placeholder="Name"
             ref={register({ required: true })}
           />
@@ -40,7 +44,7 @@ const SignUpForm = () => {
           <input
             id="Datum"
             type="date"
-            name="DateTime"
+            name="date"
             placeholder="Datum"
             ref={register({ required: true })}
           />

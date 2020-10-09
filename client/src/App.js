@@ -1,9 +1,13 @@
 import React from "react";
 import GlobalStyles from "./GlobalStyles";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
 import { ToDoPage } from "./pages/ToDoPage";
 import Home from "./pages/Home";
-import Menu from "./components/menu/Menu";
 import SignUpPage from "./pages/SignUpPage";
 
 function App() {
@@ -12,17 +16,17 @@ function App() {
       <GlobalStyles />
       <Router>
         <Switch>
-          <Route path="/menu">
-            <Menu />
-          </Route>
           <Route path="/account">
             <SignUpPage />
           </Route>
           <Route path="/todos">
             <ToDoPage />
           </Route>
-          <Route path="/">
+          <Route to="/home">
             <Home />
+          </Route>
+          <Route path="/">
+            <Redirect to="/account" />
           </Route>
         </Switch>
       </Router>
