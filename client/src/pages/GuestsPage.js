@@ -38,8 +38,8 @@ export default function GuestsPage({ onClick, onRefetch }) {
             key={guest.id}
             firstname={guest.firstname}
             lastname={guest.lastname}
-            onClick={onClick}
             guestId={guest.id}
+            onRefetch={refetch}
           />
         ))}
       </ItemsList>
