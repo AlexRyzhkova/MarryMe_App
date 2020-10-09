@@ -10,7 +10,7 @@ import MenuList from "../MenuList/MenuList";
 const Menu = ({ open }) => {
   return (
     <MenuList open={open}>
-      <MenuListItem to="/" text="Home" icon={timeIconSrc} />
+      <MenuListItem to="/home" text="Home" icon={timeIconSrc} />
       <MenuListItem to="/todos" text="To-Do's" icon={tasksIconSrc} />
       <MenuListItem to={"/budget"} text="Budget" icon={euroIconSrc} />
       <MenuListItem to={"/guests"} text="Gästeliste" icon={peopleIconSrc} />

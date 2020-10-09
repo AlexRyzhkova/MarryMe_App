@@ -1,9 +1,13 @@
 import React from "react";
 import GlobalStyles from "./GlobalStyles";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
 import { ToDoPage } from "./pages/ToDoPage";
 import Home from "./pages/Home";
-import Menu from "./components/menu/Menu";
 import SignUpPage from "./pages/SignUpPage";
 import GuestsPage from "./pages/GuestsPage";
 import AddListItem from "./pages/AddListItem";
@@ -14,9 +18,6 @@ function App() {
       <GlobalStyles />
       <Router>
         <Switch>
-          <Route path="/menu">
-            <Menu />
-          </Route>
           <Route path="/account">
             <SignUpPage />
           </Route>
@@ -31,6 +32,9 @@ function App() {
           </Route>
           <Route path="/">
             <Home />
+          </Route>
+          <Route path="/">
+            <Redirect to="/account" />
           </Route>
         </Switch>
       </Router>

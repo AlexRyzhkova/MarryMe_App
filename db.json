@@ -26,9 +26,9 @@
     }
   ],
   "account": {
-    "name": "Anna",
+    "yourName": "Anna",
     "partnerName": "Max",
-    "date": "2021-06-12T13:07:12.706Z"
+    "date": "2021-05-10"
   },
 
   "guests": [
