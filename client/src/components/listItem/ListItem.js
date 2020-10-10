@@ -51,7 +51,7 @@ const Container = styled.li`
     border: none;
     cursor: pointer;
     color: grey;
-    background-color: Transparent;
+    background-color: transparent;
   }
   p {
     padding-left: 0.7em;
