@@ -8,6 +8,8 @@ import styled from "@emotion/styled";
 import addNewIconSrc from "../assets/addNew.svg";
 import AddListItem from "./AddListItem";
 import PropTypes from "prop-types";
+import bubbleSrc from "../assets/bubble.svg";
+import bubble1Src from "../assets/bubble1.svg";
 
 export default function GuestsPage({ onClick, onRefetch }) {
   const { data: guests, refetch } = useAsync(getGuests);
@@ -52,11 +54,16 @@ export default function GuestsPage({ onClick, onRefetch }) {
 
 //styling
 const Container = styled.div`
+  background-image: url(${bubbleSrc}), url(${bubble1Src});
+  background-repeat: no-repeat, no-repeat;
+  background-position: 480% 30%, 100px 500px;
+  background-size: auto, auto;
   display: flex;
   flex-direction: column;
   max-height: 100vh;
   overflow: auto;
   position: relative;
+  height: 100%;
 
   div:first-child {
     position: sticky;

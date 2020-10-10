@@ -31,10 +31,11 @@ const ListContainer = styled.div`
   flex-direction: column;
   margin: 5px;
   align-self: center;
+  height: 100vh;
 
   button {
-    margin: 5px;
-    max-width: 50rem;
+    margin: 0.3em;
+    /* max-width: 50rem; */
   }
 `;
 

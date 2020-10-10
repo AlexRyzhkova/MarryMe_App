@@ -5,12 +5,14 @@ import styled from "@emotion/styled";
 function ItemsList({ children }) {
   return <ListContainer>{children}</ListContainer>;
 }
-ItemsList.propTypes = {
-  children: PropTypes.node.isRequired,
-};
 
 export default ItemsList;
 
+//styling
 const ListContainer = styled.ul`
   padding: 0;
 `;
+
+ItemsList.propTypes = {
+  children: PropTypes.node.isRequired,
+};

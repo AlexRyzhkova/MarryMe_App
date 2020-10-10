@@ -25,10 +25,10 @@ export default ToDoListItem;
 
 //Styling
 const Button = styled.button`
-  border-radius: 30px;
+  border-radius: 1.8em;
   background-color: #ffffff;
   color: #141313;
-  padding: 15px 6px 6px 6px;
+  padding: 0.9em 0.3em 0.3em 0.3em;
   display: grid;
   grid-template-rows: auto auto;
   grid-template-columns: 10% 1fr auto;
