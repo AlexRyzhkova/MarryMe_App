@@ -28,6 +28,64 @@
   "account": {
     "yourName": "Anna",
     "partnerName": "Max",
-    "date": "2022-05-10"
-  }
+    "date": "2021-05-10"
+  },
+
+  "guests": [
+    {
+      "id": 1,
+      "firstname": "Max",
+      "lastname": "Mustermann"
+    },
+    {
+      "id": 2,
+      "firstname": "Max",
+      "lastname": "Mustermann"
+    },
+    {
+      "id": 3,
+      "firstname": "Max",
+      "lastname": "Mustermann"
+    },
+    {
+      "id": 4,
+      "firstname": "Max",
+      "lastname": "Mustermann"
+    },
+    {
+      "id": 5,
+      "firstname": "Max",
+      "lastname": "Mustermann"
+    },
+    {
+      "id": 6,
+      "firstname": "Max",
+      "lastname": "Mustermann"
+    },
+    {
+      "id": 7,
+      "firstname": "Max",
+      "lastname": "Mustermann"
+    },
+    {
+      "id": 8,
+      "firstname": "Max",
+      "lastname": "Mustermann"
+    },
+    {
+      "id": 9,
+      "firstname": "Max",
+      "lastname": "Mustermann"
+    },
+    {
+      "id": 10,
+      "firstname": "Max",
+      "lastname": "Mustermann"
+    },
+    {
+      "id": 11,
+      "firstname": "Max",
+      "lastname": "Mustermann"
+    }
+  ]
 }

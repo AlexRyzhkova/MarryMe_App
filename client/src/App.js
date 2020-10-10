@@ -9,6 +9,8 @@ import {
 import { ToDoPage } from "./pages/ToDoPage";
 import Home from "./pages/Home";
 import SignUpPage from "./pages/SignUpPage";
+import GuestsPage from "./pages/GuestsPage";
+import AddListItem from "./pages/AddListItem";
 
 function App() {
   return (
@@ -22,7 +24,13 @@ function App() {
           <Route path="/todos">
             <ToDoPage />
           </Route>
-          <Route to="/home">
+          <Route path="/guests">
+            <GuestsPage />
+          </Route>
+          <Route path="/newguest">
+            <AddListItem />
+          </Route>
+          <Route path="/">
             <Home />
           </Route>
           <Route path="/">
