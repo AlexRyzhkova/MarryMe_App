@@ -75,7 +75,7 @@ const Container = styled.div`
 const Main = styled.div`
   display: flex;
   flex-direction: column;
-  flex-grow: 1;
+  /* flex-grow: 1; */
 
   h2 {
     padding: 20px 0 15px 0;
