@@ -7,8 +7,8 @@ import styled from "@emotion/styled";
 import { getToDo, getTodos } from "../api/fetchToDos";
 import CreateToDo from "./CreateToDo";
 import useAsync from "../hooks/useAsync";
-import bubbleSrc from "../assets/bubble.svg";
 import bubble1Src from "../assets/bubble1.svg";
+import bubbleSrc from "../assets/bubble.svg";
 
 export const ToDoPage = () => {
   const [showModal, setShowModal] = useState(false);
