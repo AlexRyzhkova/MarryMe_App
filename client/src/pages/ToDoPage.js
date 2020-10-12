@@ -7,6 +7,8 @@ import styled from "@emotion/styled";
 import { getToDo, getTodos } from "../api/fetchToDos";
 import CreateToDo from "./CreateToDo";
 import useAsync from "../hooks/useAsync";
+import bubble1Src from "../assets/bubble1.svg";
+import bubbleSrc from "../assets/bubble.svg";
 
 export const ToDoPage = () => {
   const [showModal, setShowModal] = useState(false);
@@ -60,6 +62,10 @@ const Container = styled.div`
   position: relative;
   max-height: 100vh;
   overflow: auto;
+  background-image: url(${bubbleSrc}), url(${bubble1Src});
+  background-repeat: no-repeat, no-repeat;
+  background-position: 500% 30%, 200px 400px;
+
   div:first-child {
     position: sticky;
     top: 0;
@@ -69,7 +75,7 @@ const Container = styled.div`
 const Main = styled.div`
   display: flex;
   flex-direction: column;
-  flex-grow: 1;
+  /* flex-grow: 1; */
 
   h2 {
     padding: 20px 0 15px 0;
@@ -87,4 +93,7 @@ const OpenButton = styled.button`
   background-color: transparent;
   border: none;
   outline: none;
+  position: sticky;
+  bottom: 0;
+  padding: 1em;
 `;

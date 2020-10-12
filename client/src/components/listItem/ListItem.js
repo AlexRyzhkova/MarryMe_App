@@ -35,13 +35,13 @@ const Container = styled.li`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.7em;
+  padding: 1em;
   border-radius: 30px;
   margin: 5px;
   background-color: #ffffff;
   color: #141313;
   box-shadow: 2px 2px 6px 0px lightgrey;
-  margin: 1em 1.5em;
+  margin: 1em 1.7em;
 
   button {
     margin-right: 0.5em;

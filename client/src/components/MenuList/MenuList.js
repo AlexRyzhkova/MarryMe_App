@@ -15,7 +15,7 @@ const Menu = styled.ul`
   display: flex;
   border-right: 1.5px solid black;
   transition: transform 0.3s ease-in-out;
-  transform: ${({ open }) => (open ? "translateX(-20%)" : "translateX(-130%)")};
+  transform: ${({ open }) => (open ? "translateX(-27%)" : "translateX(-130%)")};
   position: fixed;
   flex-flow: column nowrap;
   background-color: var(--menu-bg-color);

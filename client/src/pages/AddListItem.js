@@ -17,7 +17,7 @@ export default function AddListItem({
         <CloseButton onClick={handleCloseClick}>
           <img src={closeIconSrc} alt="close button" />
         </CloseButton>
-        <h2>Neues ToDo</h2>
+        <h2>Neuer Gast</h2>
         <AddNewItemForm
           guest={guest}
           onSetShowModal={onSetShowModal}
