@@ -4,7 +4,7 @@
 
 **THIS IS A FINAL PROJECT FOR MY WEB DEVELOPER BOOTCAMP AT [neue fische](https://www.neuefische.de/)**
 
-Marry Me is the app which helps you plan and organize your wedding. With the to-do list, guest list and budget planning you can keep track of all the important things.
+Marry Me is the app which helps you to plan and organize your wedding. With the to-do list, guest list and budget planning you can keep track of all the important things.
 
 ## 📲 Design and layout infos
 
