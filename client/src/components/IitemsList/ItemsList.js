@@ -11,6 +11,7 @@ export default ItemsList;
 //styling
 const ListContainer = styled.ul`
   padding: 0;
+  height: 100vh;
 `;
 
 ItemsList.propTypes = {
