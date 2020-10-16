@@ -13,9 +13,6 @@ function App() {
       <GlobalStyles />
       <Router>
         <Switch>
-          <Route exact path="/">
-            <SignUpPage />
-          </Route>
           <Route path="/todos">
             <ToDoPage />
           </Route>
@@ -27,6 +24,9 @@ function App() {
           </Route>
           <Route path="/main">
             <Home />
+          </Route>
+          <Route exact path="/">
+            <SignUpPage />
           </Route>
         </Switch>
       </Router>
