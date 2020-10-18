@@ -10,6 +10,11 @@ Marry Me is the app which helps you to plan and organize your wedding. With the 
 
 The app is designed and laid out for smartphone screens, so adjust the settings in your view accordingly to IPhone 5 or 6/7/8.
 
+## 🖱 Deployment
+
+The app is deployed on Heroku and can be tested here:
+[MarryMe Deployment](https://marry-me-app.herokuapp.com/)
+
 ## 🔧 Development
 
 ### Requirements
