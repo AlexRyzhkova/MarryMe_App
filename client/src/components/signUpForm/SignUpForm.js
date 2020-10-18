@@ -11,7 +11,7 @@ const SignUpForm = () => {
 
   const onSubmit = async (userData) => {
     await postAccount(userData);
-    history.push("/");
+    history.push("/main");
   };
 
   return (
@@ -27,7 +27,7 @@ const SignUpForm = () => {
             ref={register({ required: true })}
           />
         </section>
-        {errors.DeinName && <small>Bitte ausfüllen</small>}
+        {errors.yourName && <small>Bitte ausfüllen</small>}
         <section>
           <label htmlFor="Partnername">Partnername</label>
           <input
@@ -38,7 +38,7 @@ const SignUpForm = () => {
             ref={register({ required: true })}
           />
         </section>
-        {errors.PartnerName && <small>Bitte ausfüllen</small>}
+        {errors.partnerName && <small>Bitte ausfüllen</small>}
         <section>
           <label htmlFor="Datum">Datum</label>
           <input
@@ -49,7 +49,7 @@ const SignUpForm = () => {
             ref={register({ required: true })}
           />
         </section>
-        {errors.DateTime && <small>Bitte ausfüllen</small>}
+        {errors.date && <small>Bitte ausfüllen</small>}
         <SignUpButton />
       </form>
     </Form>
